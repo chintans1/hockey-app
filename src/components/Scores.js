@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
-import { scores } from '../utils/scores';
-
 export default class Scores extends Component {
   render() {
+    const { scores } = this.props;
+
     return (
       <View style={styles.root}>
         <FlatList
