@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 
-import GameScore from './GameScore';
+import GameScore from './game-scores/GameScore';
 
 import { colors } from '../styles';
 
