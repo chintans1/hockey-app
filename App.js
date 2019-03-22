@@ -1,7 +1,7 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-import HomeScreen from './src/screens/HomeScreen';
-import GameScreen from './src/screens/GameScreen';
+import HomeScreen from './screens/HomeScreen';
+import GameScreen from './screens/GameScreen';
 
 const headerStyles = {
   headerBackTitle: null,
