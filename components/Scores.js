@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
+
+import GameScore from './GameScore';
+
+import { colors } from '../styles';
 
 export default class Scores extends Component {
   render() {
@@ -12,9 +16,10 @@ export default class Scores extends Component {
           data={scores}
           renderItem={
             ({item}) =>
-              <Text style={styles.itemText}>
-                {item.teamOne} vs {item.teamTwo}
-              </Text>
+              <GameScore
+                homeTeam={item.teamOne}
+                roadTeam={item.teamTwo}
+              />
           }
         />
       </View>
@@ -24,20 +29,7 @@ export default class Scores extends Component {
 
 const styles = StyleSheet.create({
   root: {
-    backgroundColor: "#ecf0f1",
-    flex: 1,
-    alignItems: 'center'
-  },
-
-  text: {
-    color: '#2c3e50',
-    fontSize: 30,
-    fontWeight: 'bold'
-  },
-
-  itemText: {
-    padding: 15,
-    fontSize: 18,
-    height: 40
+    backgroundColor: colors.backgroundColor,
+    flex: 1
   }
 })

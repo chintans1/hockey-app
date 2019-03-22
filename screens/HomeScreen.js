@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
+import { StatusBar, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 
 import Scores from '../components/Scores';
 
-import { typography } from '../styles';
+import { typography, colors } from '../styles';
 
 import { scores } from '../utils/scores';
 
@@ -17,6 +17,9 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
+        <StatusBar
+          barStyle="light-content"
+        />
         <Scores
           scores={scores}
         />
@@ -28,6 +31,6 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ecf0f1'
+    backgroundColor: colors.backgroundColor
   }
-})
+});
