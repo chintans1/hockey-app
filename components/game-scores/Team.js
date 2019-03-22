@@ -10,9 +10,14 @@ export default class Team extends Component {
     return (
       <View style={componentStyle.team}>
         <View style={componentStyle.teamLogoContainer}>
-          <Image style={componentStyle.teamLogo} />
+          <Image
+            source={{
+              uri: team.logo
+            }}
+            style={componentStyle.teamLogo}
+          />
         </View>
-        <Text style={componentStyle.teamText}>{team}</Text>
+        <Text style={componentStyle.teamText}>{team.name}</Text>
       </View>
     )
   }
@@ -21,7 +26,7 @@ export default class Team extends Component {
 const componentStyle = StyleSheet.create({
   team: {
     alignItems: 'center',
-    flex: 2,
+    flex: 1,
     flexDirection: 'column'
   },
 

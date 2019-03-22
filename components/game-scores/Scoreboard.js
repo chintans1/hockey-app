@@ -5,10 +5,22 @@ import { colors } from '../../styles';
 
 export default class Scoreboard extends Component {
   render() {
+    const { gameScore } = this.props;
+
     return (
       <View style={componentStyle.gameInfo}>
-        <Text style={componentStyle.gameInfoText}>STARTS</Text>
-        <Text style={componentStyle.gameInfoText}>00:00</Text>
+        <View style={{ flex: 1 }}>
+          <Text style={componentStyle.gameScoreText}>{gameScore.homeTeamScore}</Text>
+        </View>
+
+        <View style={{ flex: 4, flexDirection: 'column' }}>
+          <Text style={componentStyle.gameInfoText}>STARTS</Text>
+          <Text style={componentStyle.gameInfoText}>{gameScore.startTime}</Text>
+        </View>
+
+        <View style={{ flex: 1 }}>
+          <Text style={componentStyle.gameScoreText}>{gameScore.roadTeamScore}</Text>
+        </View>
       </View>
     )
   }
@@ -18,12 +30,19 @@ const componentStyle = StyleSheet.create({
   gameInfo: {
     alignItems: 'center',
     flex: 2,
-    flexDirection: 'column'
+    flexDirection: 'row'
   },
 
   gameInfoText: {
     color: colors.secondaryTextColor,
     fontSize: 14,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+
+  gameScoreText: {
+    color: colors.primaryTextColor,
+    fontSize: 36,
     fontWeight: 'bold',
     textAlign: 'center'
   }

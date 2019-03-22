@@ -17,8 +17,9 @@ export default class Scores extends Component {
           renderItem={
             ({item}) =>
               <GameScore
-                homeTeam={item.teamOne}
-                roadTeam={item.teamTwo}
+                homeTeam={item.homeTeam}
+                roadTeam={item.roadTeam}
+                gameScore={item.gameScore}
               />
           }
         />
