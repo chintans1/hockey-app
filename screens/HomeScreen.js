@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
+
+import Scores from '../components/Scores';
+
+import { typography } from '../styles';
 
 import { scores } from '../utils/scores';
-import Scores from '../components/Scores';
-import { SafeAreaView } from 'react-navigation';
 
 export default class HomeScreen extends Component {
   static navigationOptions = {
     title: 'Scores',
-    headerTitleStyle: {
-      flex: 1,
-      fontWeight: 'bold',
-      fontSize: 36,
-      textAlign: 'left'
-    }
+    headerTitleStyle: typography.bigHeaderTitleStyle
   };
 
   render() {
