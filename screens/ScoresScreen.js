@@ -8,7 +8,7 @@ import { typography, colors } from '../styles';
 
 import { scores } from '../utils/scores';
 
-export default class HomeScreen extends Component {
+export default class ScoresScreen extends Component {
   static navigationOptions = {
     title: 'Scores',
     headerTitleStyle: typography.bigHeaderTitleStyle
@@ -24,7 +24,7 @@ export default class HomeScreen extends Component {
           scores={scores}
         />
       </SafeAreaView>
-    );
+    )
   }
 }
 
