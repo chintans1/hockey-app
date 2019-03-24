@@ -3,16 +3,15 @@ import { FlatList, StyleSheet, View } from 'react-native';
 
 import GameScore from './game-scores/GameScore';
 
-import { colors } from '../styles';
+import { styles } from '../styles';
 
 export default class Scores extends Component {
   render() {
     const { scores } = this.props;
 
     return (
-      <View style={styles.root}>
+      <View style={componentStyles.container}>
         <FlatList
-          style={styles.text}
           data={scores}
           renderItem={
             ({item}) =>
@@ -28,9 +27,6 @@ export default class Scores extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  root: {
-    backgroundColor: colors.backgroundColor,
-    flex: 1
-  }
+const componentStyles = StyleSheet.create({
+  container: styles.defaultContainer
 })

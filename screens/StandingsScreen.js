@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { SafeAreaView, StatusBar, StyleSheet, Text } from 'react-native';
 
-import { colors, typography } from '../styles';
+import { colors, typography, styles } from '../styles';
 
 export default class StandingsScreen extends Component {
   static navigationOptions = {
@@ -11,21 +11,21 @@ export default class StandingsScreen extends Component {
 
   render() {
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={componentStyles.container}>
         <StatusBar barStyle="light-content" />
-        <Text style={styles.text}>Standings Screen</Text>
+        <Text style={componentStyles.text}>Standings Screen</Text>
       </SafeAreaView>
     )
   }
 }
 
-const styles = StyleSheet.create({
+const componentStyles = StyleSheet.create({
   container: {
+    ...styles.defaultContainer,
     justifyContent: 'center',
-    flex: 1,
-    backgroundColor: colors.backgroundColor
   },
 
+  // FIXME: This is temporary
   text: {
     color: colors.primaryTextColor,
     fontSize: 36,

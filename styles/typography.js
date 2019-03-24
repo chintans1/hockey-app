@@ -1,3 +1,5 @@
+import * as dimens from './dimens';
+
 const defaultHeaderTitleStyle = {
   fontWeight: 'bold'
 };
@@ -5,11 +7,17 @@ const defaultHeaderTitleStyle = {
 const bigHeaderTitleStyle = {
   ...defaultHeaderTitleStyle,
   flex: 1,
-  fontSize: 36,
+  fontSize: dimens.bigHeaderTextSize,
   textAlign: 'left'
 };
 
+const tabBarLabelStyle = {
+  fontWeight: 'bold',
+  fontSize: dimens.tabTextSize
+}
+
 export {
   defaultHeaderTitleStyle,
-  bigHeaderTitleStyle
+  bigHeaderTitleStyle,
+  tabBarLabelStyle
 };

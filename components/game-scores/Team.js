@@ -8,22 +8,18 @@ export default class Team extends Component {
     const { team } = this.props;
 
     return (
-      <View style={componentStyle.team}>
-        <View style={componentStyle.teamLogoContainer}>
-          <Image
-            source={{
-              uri: team.logo
-            }}
-            style={componentStyle.teamLogo}
-          />
+      <View style={componentStyles.team}>
+        <View style={componentStyles.teamLogoContainer}>
+          <Image source={{ uri: team.logo }} style={componentStyles.teamLogo} />
         </View>
-        <Text style={componentStyle.teamText}>{team.name}</Text>
+
+        <Text style={componentStyles.teamText}>{team.name}</Text>
       </View>
     )
   }
 }
 
-const componentStyle = StyleSheet.create({
+const componentStyles = StyleSheet.create({
   team: {
     alignItems: 'center',
     flex: 1,

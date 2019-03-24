@@ -4,7 +4,7 @@ import ScoresScreen from './screens/ScoresScreen';
 import GameScreen from './screens/GameScreen';
 import StandingsScreen from './screens/StandingsScreen';
 
-import { styles, colors } from './styles/index';
+import { styles, colors, typography } from './styles/index';
 
 const ScoresStack = createStackNavigator(
   {
@@ -41,10 +41,8 @@ const AppNavigator = createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: colors.primaryTextColor,
       inactiveTintColor: colors.secondaryTextColor,
-      labelStyle: {
-        fontWeight: 'bold',
-        fontSize: 16
-      },
+      showIcon: false,
+      labelStyle: typography.tabBarLabelStyle,
       style: {
         borderTopWidth: 0,
         backgroundColor: colors.backgroundColor

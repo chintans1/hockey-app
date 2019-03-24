@@ -1,4 +1,5 @@
 import * as colors from './colors';
+import * as dimens from './dimens';
 import * as typography from './typography';
 
 const defaultHeaderStyle = {
@@ -24,11 +25,17 @@ const cardShadow = {
   shadowColor: 'black',
   shadowOffset: { width: 0, height: 4 },
   shadowOpacity: 0.1,
-  shadowRadius: 5
+  shadowRadius: dimens.cardRadius
+};
+
+const defaultContainer = {
+  flex: 1,
+  backgroundColor: colors.backgroundColor
 }
 
 export {
   defaultHeaderStyle,
   bigHeaderStyle,
-  cardShadow
+  cardShadow,
+  defaultContainer
 };

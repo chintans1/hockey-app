@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-navigation';
 
 import Scores from '../components/Scores';
 
-import { typography, colors } from '../styles';
+import { typography, styles } from '../styles';
 
 import { scores } from '../utils/scores';
 
@@ -16,21 +16,14 @@ export default class ScoresScreen extends Component {
 
   render() {
     return (
-      <SafeAreaView style={styles.container}>
-        <StatusBar
-          barStyle="light-content"
-        />
-        <Scores
-          scores={scores}
-        />
+      <SafeAreaView style={componentStyles.container}>
+        <StatusBar barStyle="light-content" />
+        <Scores scores={scores} />
       </SafeAreaView>
     )
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.backgroundColor
-  }
+const componentStyles = StyleSheet.create({
+  container: styles.defaultContainer
 });
