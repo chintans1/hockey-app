@@ -10,10 +10,10 @@ export default class Team extends Component {
     return (
       <View style={componentStyles.team}>
         <View style={componentStyles.teamLogoContainer}>
-          <Image source={{ uri: team.logo }} style={componentStyles.teamLogo} />
+          <Image source={{ uri: team.teamLogo }} style={componentStyles.teamLogo} />
         </View>
 
-        <Text style={componentStyles.teamText}>{team.name}</Text>
+        <Text style={componentStyles.teamText}>{team.teamName}</Text>
       </View>
     )
   }
