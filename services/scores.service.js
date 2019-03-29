@@ -1,10 +1,10 @@
 import axios from 'axios';
+import { API_BASE_URL } from 'react-native-dotenv';
 
-// TODO: Move to better location (environment variable?)
-const baseUrl = 'http://192.168.0.19:3000/v1'
+const apiUrl = `${API_BASE_URL}/v1`
 
 const getScores = (date) =>
-  axios.get(`${baseUrl}/scores`, {
+  axios.get(`${apiUrl}/scores`, {
           params: {
             date
           }

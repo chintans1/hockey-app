@@ -14,14 +14,14 @@ import { styles } from '../styles';
 // TODO: Better folder structure inside components/ folder, Scores.js should belong in a folder
 class Scores extends Component {
   componentDidMount = () => {
-    this.props.getScores('2019-03-25');
+    this.props.getScores('2019-03-26'); // TODO: Get current date
   }
 
   renderGameScore = ({ item }) => (
     <GameScore
       homeTeam={item.homeTeam}
       roadTeam={item.roadTeam}
-      gameScore={{ ...item.gameScore, ...item.gameInformation }} // TODO: Might have to change API to return this better
+      gameScore={item.gameInformation}
     />
   );
 

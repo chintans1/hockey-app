@@ -10,7 +10,7 @@ export default class Scoreboard extends Component {
     return (
       <View style={componentStyle.gameInfo}>
         <View style={{ flex: 1 }}>
-          <Text style={componentStyle.gameScoreText}>{gameScore.homeTeam}</Text>
+          <Text style={componentStyle.gameScoreText}>{gameScore.gameScore.homeTeam}</Text>
         </View>
 
         <View style={{ flex: 4, flexDirection: 'column' }}>
@@ -19,7 +19,7 @@ export default class Scoreboard extends Component {
         </View>
 
         <View style={{ flex: 1 }}>
-          <Text style={componentStyle.gameScoreText}>{gameScore.roadTeam}</Text>
+          <Text style={componentStyle.gameScoreText}>{gameScore.gameScore.roadTeam}</Text>
         </View>
       </View>
     )
