@@ -10,16 +10,16 @@ export default class Scoreboard extends Component {
     return (
       <View style={componentStyle.gameInfo}>
         <View style={{ flex: 1 }}>
-          <Text style={componentStyle.gameScoreText}>{gameScore.homeTeamScore}</Text>
+          <Text style={componentStyle.gameScoreText}>{gameScore.gameScore.homeTeam}</Text>
         </View>
 
         <View style={{ flex: 4, flexDirection: 'column' }}>
-          <Text style={componentStyle.gameInfoText}>STARTS</Text>
-          <Text style={componentStyle.gameInfoText}>{gameScore.startTime}</Text>
+          <Text style={componentStyle.gameInfoText}>{gameScore.periodInfo.currentPeriod}</Text>
+          <Text style={componentStyle.gameInfoText}>{gameScore.periodInfo.currentPeriodTimeRemaining}</Text>
         </View>
 
         <View style={{ flex: 1 }}>
-          <Text style={componentStyle.gameScoreText}>{gameScore.roadTeamScore}</Text>
+          <Text style={componentStyle.gameScoreText}>{gameScore.gameScore.roadTeam}</Text>
         </View>
       </View>
     )

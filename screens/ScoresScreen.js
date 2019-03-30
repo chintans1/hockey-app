@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { StatusBar, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 
 import Scores from '../components/Scores';
 
 import { typography, styles } from '../styles';
-
-import { scores } from '../utils/scores';
 
 export default class ScoresScreen extends Component {
   static navigationOptions = {
@@ -17,8 +15,7 @@ export default class ScoresScreen extends Component {
   render() {
     return (
       <SafeAreaView style={componentStyles.container}>
-        <StatusBar barStyle="light-content" />
-        <Scores scores={scores} />
+        <Scores />
       </SafeAreaView>
     )
   }
