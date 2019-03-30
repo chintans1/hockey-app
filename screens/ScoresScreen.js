@@ -9,10 +9,6 @@ import GameScore from '../components/game-scores/GameScore';
 import { getScores } from '../redux/actions/scores.actions';
 import { typography, styles } from '../styles';
 
-// TODO: Maybe the screens should be handling all interaction with redux store..
-// Components should be dumb, take in "games" array as prop. Research on best practices here..
-
-// TODO: Better folder structure inside components/ folder, Scores.js should belong in a folder
 class ScoresScreen extends Component {
   static navigationOptions = {
     title: 'Scores',
@@ -20,8 +16,8 @@ class ScoresScreen extends Component {
   };
 
   componentDidMount = () => {
-    this.props.getScores('2019-03-26'); // TODO: Get current date
-  }
+    this.props.getScores('2019-03-29'); // TODO: Get current date
+  };
 
   renderEachGame = ({ item }) => (
     <GameScore
@@ -42,7 +38,7 @@ class ScoresScreen extends Component {
         />
       </SafeAreaView>
     )
-  }
+  };
 }
 
 const componentStyles = StyleSheet.create({
@@ -57,7 +53,7 @@ const mapStateToProps = (state) => {
   return {
     games: storedScores
   }
-}
+};
 
 const mapDispatchToProps = (dispatch) => (
   bindActionCreators({
