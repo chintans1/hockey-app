@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import GameScore from '../components/GameScore';
 
 import { getGamesForDate } from '../redux/actions/games.actions';
+import { dateUtil } from '../utils';
 import { typography, styles } from '../styles';
 
 class GamesScreen extends Component {
@@ -16,7 +17,7 @@ class GamesScreen extends Component {
   };
 
   componentDidMount = () => {
-    this.props.getGamesForDate('2019-03-29'); // TODO: Get current date
+    this.props.getGamesForDate(dateUtil.getCurrentDate());
   };
 
   renderEachGame = ({ item }) => (
@@ -32,6 +33,7 @@ class GamesScreen extends Component {
 
     return (
       <SafeAreaView style={componentStyles.container}>
+        {/* TODO: Loading icon instead of showing blank screen waiting for API results */}
         <FlatList
           data={games}
           renderItem={this.renderEachGame}

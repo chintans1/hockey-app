@@ -13,6 +13,7 @@ export default class Team extends Component {
     return (
       <View style={componentStyles.team}>
         <View style={componentStyles.teamLogoContainer}>
+          {/* TODO: Fix logo styling */}
           <Image source={{ uri: logoUrl }} style={componentStyles.teamLogo} />
         </View>
 
