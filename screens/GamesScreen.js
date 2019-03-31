@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-navigation';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import GameScore from '../components/game-scores/GameScore';
+import GameScore from '../components/GameScore';
 
 import { getGamesForDate } from '../redux/actions/games.actions';
 import { typography, styles } from '../styles';
@@ -45,7 +45,6 @@ const componentStyles = StyleSheet.create({
   container: styles.defaultContainer
 });
 
-// FIXME: renaming Scores to Games
 const mapStateToProps = (state) => {
   const { games } = state.gamesReducer;
   let storedGames = games.map(game => ({...game, key: `${game.gameId}`}))

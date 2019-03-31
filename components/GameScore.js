@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import Team from './Team';
 import Scoreboard from './Scoreboard';
 
-import { colors, dimens, styles } from '../../styles';
+import { colors, dimens, styles } from '../styles';
 
 export default class GameScore extends Component {
   render() {

@@ -3,7 +3,7 @@ import { View, Image, StyleSheet, Text } from "react-native";
 
 import { API_BASE_URL } from 'react-native-dotenv';
 
-import { colors, dimens } from '../../styles';
+import { colors, dimens } from '../styles';
 
 export default class Team extends Component {
   render() {
