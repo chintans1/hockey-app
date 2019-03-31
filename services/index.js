@@ -1,5 +1,5 @@
-import * as scoresService from './scores.service';
+import * as gamesService from './games.service';
 
 export {
-  scoresService
+  gamesService
 }

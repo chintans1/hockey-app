@@ -6,17 +6,17 @@ import { connect } from 'react-redux';
 
 import GameScore from '../components/game-scores/GameScore';
 
-import { getScores } from '../redux/actions/scores.actions';
+import { getGamesForDate } from '../redux/actions/games.actions';
 import { typography, styles } from '../styles';
 
-class ScoresScreen extends Component {
+class GamesScreen extends Component {
   static navigationOptions = {
-    title: 'Scores',
+    title: 'Games',
     headerTitleStyle: typography.bigHeaderTitleStyle
   };
 
   componentDidMount = () => {
-    this.props.getScores('2019-03-29'); // TODO: Get current date
+    this.props.getGamesForDate('2019-03-29'); // TODO: Get current date
   };
 
   renderEachGame = ({ item }) => (
@@ -47,18 +47,18 @@ const componentStyles = StyleSheet.create({
 
 // FIXME: renaming Scores to Games
 const mapStateToProps = (state) => {
-  const { scores } = state.scoresReducer;
-  let storedScores = scores.map(score => ({...score, key: `${score.gameId}`}))
+  const { games } = state.gamesReducer;
+  let storedGames = games.map(game => ({...game, key: `${game.gameId}`}))
 
   return {
-    games: storedScores
+    games: storedGames
   }
 };
 
 const mapDispatchToProps = (dispatch) => (
   bindActionCreators({
-    getScores,
+    getGamesForDate,
   }, dispatch)
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(ScoresScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(GamesScreen);

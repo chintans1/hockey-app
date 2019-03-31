@@ -1,5 +1,5 @@
-import * as scoresConstants from './scores.constants';
+import * as gamesConstants from './games.constants';
 
 export {
-  scoresConstants
+  gamesConstants
 }

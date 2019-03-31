@@ -3,8 +3,8 @@ import { API_BASE_URL } from 'react-native-dotenv';
 
 const apiUrl = `${API_BASE_URL}/v1`
 
-const getScores = (date) =>
-  axios.get(`${apiUrl}/scores`, {
+const getGamesForDate = (date) =>
+  axios.get(`${apiUrl}/games`, {
           params: {
             date
           }
@@ -13,5 +13,5 @@ const getScores = (date) =>
        .catch((error) => console.error(error)) // TODO: Handle error
 
 export {
-  getScores
+  getGamesForDate
 }

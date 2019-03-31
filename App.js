@@ -3,20 +3,20 @@ import { StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation';
 
-import ScoresScreen from './screens/ScoresScreen';
+import GamesScreen from './screens/GamesScreen';
 import GameScreen from './screens/GameScreen';
 import StandingsScreen from './screens/StandingsScreen';
 import configureStore from './redux/store';
 
 import { styles, colors, typography } from './styles/index';
 
-const ScoresStack = createStackNavigator(
+const GamesStack = createStackNavigator(
   {
-    Scores: ScoresScreen,
-    Game: GameScreen
+    Games: GamesScreen,
+    Game: GameScreen // TODO: SingleGameScreen?
   },
   {
-    initialRouteName: 'Scores',
+    initialRouteName: 'Games',
     defaultNavigationOptions: {
       ...styles.defaultHeaderStyle
     }
@@ -37,11 +37,11 @@ const StandingsStack = createStackNavigator(
 
 const AppNavigator = createBottomTabNavigator(
   {
-    Scores: ScoresStack,
+    Games: GamesStack,
     Standings: StandingsStack
   },
   {
-    initialRouteName: 'Scores',
+    initialRouteName: 'Games',
     tabBarOptions: {
       activeTintColor: colors.primaryTextColor,
       inactiveTintColor: colors.secondaryTextColor,

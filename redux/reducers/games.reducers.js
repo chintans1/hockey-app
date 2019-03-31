@@ -1,26 +1,26 @@
-import { scoresConstants } from "../constants";
+import { gamesConstants } from "../constants";
 
 const initialState = {
-  scores: []
+  games: []
 }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case scoresConstants.GET_SCORES_REQUEST:
+    case gamesConstants.GET_GAMES_REQUEST:
       return {
         ...state,
-        scores: []
+        games: []
       }
-    case scoresConstants.GET_SCORES_SUCCESS:
+    case gamesConstants.GET_GAMES_SUCCESS:
       return {
         ...state,
-        scores: action.payload.scores
+        games: action.payload.games
       }
-    case scoresConstants.GET_SCORES_FAILURE:
+    case gamesConstants.GET_GAMES_FAILURE:
       // TODO: Error handling
       return {
         ...state,
-        scores: []
+        games: []
       }
     default:
       return state;

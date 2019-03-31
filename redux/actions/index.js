@@ -1,5 +1,5 @@
-import * as scoresActions from './scores.actions';
+import * as gamesActions from './games.actions';
 
 export {
-  scoresActions
+  gamesActions
 }
