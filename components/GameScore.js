@@ -28,7 +28,7 @@ const componentStyles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     margin: dimens.padding,
-    padding: dimens.padding,
+    paddingVertical: dimens.padding,
     ...styles.cardShadow
   }
 });

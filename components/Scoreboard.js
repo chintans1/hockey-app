@@ -29,7 +29,7 @@ export default class Scoreboard extends Component {
 const componentStyle = StyleSheet.create({
   gameInfo: {
     alignItems: 'center',
-    flex: 2,
+    flex: 1,
     flexDirection: 'row'
   },
 

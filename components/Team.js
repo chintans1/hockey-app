@@ -19,7 +19,11 @@ export default class Team extends Component {
             resizeMode="contain" />
         </View>
 
-        <Text style={componentStyles.teamText}>{team.teamName}</Text>
+        <Text
+          numberOfLines={1}
+          style={componentStyles.teamText}>
+          {team.teamName}
+        </Text>
       </View>
     )
   }
@@ -28,8 +32,7 @@ export default class Team extends Component {
 const componentStyles = StyleSheet.create({
   team: {
     alignItems: 'center',
-    flex: 1,
-    flexDirection: 'column'
+    flex: 0.85
   },
 
   teamLogoContainer: {
