@@ -24,7 +24,7 @@ class GamesScreen extends Component {
     <GameScore
       homeTeam={item.homeTeam}
       roadTeam={item.roadTeam}
-      gameScore={item.gameInformation}
+      gameInformation={item.gameInformation}
     />
   );
 

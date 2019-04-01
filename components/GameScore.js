@@ -8,12 +8,12 @@ import { colors, dimens, styles } from '../styles';
 
 export default class GameScore extends Component {
   render() {
-    const { homeTeam, roadTeam, gameScore } = this.props;
+    const { homeTeam, roadTeam, gameInformation } = this.props;
 
     return (
       <View style={componentStyles.card}>
         <Team team={homeTeam} />
-        <Scoreboard gameScore={gameScore} />
+        <Scoreboard gameInformation={gameInformation} />
         <Team team={roadTeam} />
       </View>
     )
