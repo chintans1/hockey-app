@@ -16,8 +16,20 @@ class GamesScreen extends Component {
     headerTitleStyle: typography.bigHeaderTitleStyle
   };
 
+  constructor(props) {
+    super(props)
+    this.state = { refreshing: false }
+  };
+
   componentDidMount = () => {
     this.props.getGamesForDate(dateUtil.getCurrentDate());
+  };
+
+  onRefresh = () => {
+    this.setState({ refreshing: true }, () => {
+      this.props.getGamesForDate(dateUtil.getCurrentDate());
+      this.setState({ refreshing: false });
+    });
   };
 
   renderEachGame = ({ item }) => (
@@ -34,9 +46,13 @@ class GamesScreen extends Component {
     return (
       <SafeAreaView style={componentStyles.container}>
         {/* TODO: Loading icon instead of showing blank screen waiting for API results */}
+        {/* TODO: Do not re-render the whole list when refreshed. Don't like the blank screen
+                  shown during refresh */}
         <FlatList
           data={games}
           renderItem={this.renderEachGame}
+          onRefresh={() => this.onRefresh()}
+          refreshing={this.state.refreshing}
         />
       </SafeAreaView>
     )
