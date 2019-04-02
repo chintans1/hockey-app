@@ -16,8 +16,14 @@ const tabBarLabelStyle = {
   fontSize: dimens.tabTextSize
 }
 
+const boldCenterTextStyle = {
+  fontWeight: 'bold',
+  textAlign: 'center'
+}
+
 export {
   defaultHeaderTitleStyle,
   bigHeaderTitleStyle,
-  tabBarLabelStyle
+  tabBarLabelStyle,
+  boldCenterTextStyle
 };

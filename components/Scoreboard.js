@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View} from 'react-native';
 
-import { colors } from '../styles';
+import { colors, typography } from '../styles';
 import { dateUtil } from '../utils';
 
 export default class Scoreboard extends Component {
@@ -38,7 +38,6 @@ export default class Scoreboard extends Component {
         </View>
 
         {gameInfo}
-        {/* Preview, Live, Final are the three types for gameInfo.gameStatus */ }
 
         <View style={componentStyle.gameScore}>
           <Text style={componentStyle.gameScoreText}>{gameScore.roadTeam}</Text>
@@ -63,15 +62,13 @@ const componentStyle = StyleSheet.create({
   gameInfoText: {
     color: colors.secondaryTextColor,
     fontSize: 14,
-    fontWeight: 'bold',
-    textAlign: 'center'
+    ...typography.boldCenterTextStyle
   },
 
   gameStatusText: {
     color: colors.secondaryTextColor,
     fontSize: 12,
-    fontWeight: 'bold',
-    textAlign: 'center'
+    ...typography.boldCenterTextStyle
   },
 
   gameScore: {
@@ -81,7 +78,6 @@ const componentStyle = StyleSheet.create({
   gameScoreText: {
     color: colors.primaryTextColor,
     fontSize: 36,
-    fontWeight: 'bold',
-    textAlign: 'center'
+    ...typography.boldCenterTextStyle
   }
 });
