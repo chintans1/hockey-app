@@ -14,19 +14,19 @@ export default class Scoreboard extends Component {
 
       gameInfo =
         <View style={componentStyle.gameInfo}>
-          <Text style={componentStyle.gameInfoText}>Starts</Text>
+          <Text style={componentStyle.gameStatusText}>Starts</Text>
           <Text style={componentStyle.gameInfoText}>{formattedGameTime}</Text>
         </View>;
     } else if (gameStatus === "Live") {
       gameInfo =
         <View style={componentStyle.gameInfo}>
-          <Text style={componentStyle.gameInfoText}>{periodInfo.currentPeriod}</Text>
+          <Text style={componentStyle.gameStatusText}>{periodInfo.currentPeriod}</Text>
           <Text style={componentStyle.gameInfoText}>{periodInfo.currentPeriodTimeRemaining}</Text>
         </View>;
     } else {
       gameInfo =
         <View style={componentStyle.gameInfo}>
-          <Text style={componentStyle.gameInfoText}>Final</Text>
+          <Text style={componentStyle.gameStatusText}>Final</Text>
           <Text style={componentStyle.gameInfoText}>{periodInfo.currentPeriod}</Text>
         </View>;
     }
@@ -63,6 +63,13 @@ const componentStyle = StyleSheet.create({
   gameInfoText: {
     color: colors.secondaryTextColor,
     fontSize: 14,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+
+  gameStatusText: {
+    color: colors.secondaryTextColor,
+    fontSize: 12,
     fontWeight: 'bold',
     textAlign: 'center'
   },
