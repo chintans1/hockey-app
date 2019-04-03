@@ -53,6 +53,7 @@ class GamesScreen extends Component {
           renderItem={this.renderEachGame}
           onRefresh={() => this.onRefresh()}
           refreshing={this.state.refreshing}
+          keyExtractor={(item) => `${item.gameId}`}
         />
       </SafeAreaView>
     )
@@ -65,10 +66,9 @@ const componentStyles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
   const { games } = state.gamesReducer;
-  let storedGames = games.map(game => ({...game, key: `${game.gameId}`}))
 
   return {
-    games: storedGames
+    games
   }
 };
 
