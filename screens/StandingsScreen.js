@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { SafeAreaView, StyleSheet, Text } from 'react-native';
 
 import { colors, typography, styles } from '../styles';
 
-export default class StandingsScreen extends Component {
+export default class StandingsScreen extends PureComponent {
   static navigationOptions = {
     title: 'Standings',
     headerTitleStyle: typography.bigHeaderTitleStyle

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation';
@@ -57,7 +57,7 @@ const AppNavigator = createBottomTabNavigator(
 
 const Navigation = createAppContainer(AppNavigator);
 
-export default class App extends Component {
+export default class App extends PureComponent {
   render() {
     return (
       <Provider store={configureStore()}>

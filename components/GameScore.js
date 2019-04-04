@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import Team from './Team';
@@ -6,7 +6,7 @@ import Scoreboard from './Scoreboard';
 
 import { colors, dimens, styles } from '../styles';
 
-export default class GameScore extends Component {
+export default class GameScore extends PureComponent {
   render() {
     const { homeTeam, roadTeam, gameInformation } = this.props;
 

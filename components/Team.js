@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Image, StyleSheet, Text } from "react-native";
 
 import { API_BASE_URL } from 'react-native-dotenv';
 
 import { colors, dimens } from '../styles';
 
-export default class Team extends Component {
+export default class Team extends PureComponent {
   render() {
     const { team } = this.props;
     const logoUrl = `${API_BASE_URL}/static/logos/${team.teamLogoName}`

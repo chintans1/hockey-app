@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { StyleSheet, Text, View} from 'react-native';
 
 import { colors, typography } from '../styles';
 import { dateUtil } from '../utils';
 
-export default class Scoreboard extends Component {
+export default class Scoreboard extends PureComponent {
   render() {
     const { gameDate, gameScore, gameStatus, periodInfo } = this.props.gameInformation;
     let gameInfo;

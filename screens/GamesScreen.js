@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { FlatList, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import { bindActionCreators } from 'redux';
@@ -10,7 +10,7 @@ import { getGamesForDate } from '../redux/actions/games.actions';
 import { dateUtil } from '../utils';
 import { typography, styles } from '../styles';
 
-class GamesScreen extends Component {
+class GamesScreen extends PureComponent {
   static navigationOptions = {
     title: 'Games',
     headerTitleStyle: typography.bigHeaderTitleStyle

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { styles } from '../styles';
 
-export default class HomeScreen extends Component {
+export default class HomeScreen extends PureComponent {
   static navigationOptions = {
     title: 'Game Scores'
   };
