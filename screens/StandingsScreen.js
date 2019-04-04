@@ -21,14 +21,13 @@ export default class StandingsScreen extends PureComponent {
 const componentStyles = StyleSheet.create({
   container: {
     ...styles.defaultContainer,
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
 
   // FIXME: This is temporary
   text: {
     color: colors.primaryTextColor,
     fontSize: 36,
-    fontWeight: 'bold',
-    textAlign: 'center'
+    ...typography.boldCenterTextStyle
   }
 });
