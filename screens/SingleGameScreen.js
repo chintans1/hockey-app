@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { styles } from '../styles';
+import { colors, styles, typography } from '../styles';
 
 export default class SingleGameScreen extends PureComponent {
   static navigationOptions = {
@@ -10,12 +10,22 @@ export default class SingleGameScreen extends PureComponent {
   render() {
     return (
       <View style={componentStyles.container}>
-        <Text>Game Screen</Text>
+        <Text style={componentStyles.text}>Game Screen</Text>
       </View>
     );
   }
 }
 
 const componentStyles = StyleSheet.create({
-  container: styles.defaultContainer
+  container: {
+    ...styles.defaultContainer,
+    justifyContent: 'center'
+  },
+
+  // FIXME: This is temporary
+  text: {
+    color: colors.primaryTextColor,
+    fontSize: 36,
+    ...typography.boldCenterTextStyle
+  }
 })

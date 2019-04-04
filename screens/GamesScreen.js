@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { FlatList, StyleSheet } from 'react-native';
+import { FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -32,12 +32,24 @@ class GamesScreen extends PureComponent {
     });
   };
 
+  onPress = () => {
+    // TODO: Need to forward props regarding the game ID
+      // so it use to fetch game details from API
+    this.props.navigation.navigate('SingleGame');
+  }
+
+  // FIXME: In the future, incorporate force touch into the click
   renderEachGame = ({ item }) => (
-    <GameScore
-      homeTeam={item.homeTeam}
-      roadTeam={item.roadTeam}
-      gameInformation={item.gameInformation}
-    />
+    <TouchableOpacity
+      onPress={() => this.onPress()}
+      activeOpacity={0.7}
+    >
+      <GameScore
+        homeTeam={item.homeTeam}
+        roadTeam={item.roadTeam}
+        gameInformation={item.gameInformation}
+      />
+    </TouchableOpacity>
   );
 
   render() {
