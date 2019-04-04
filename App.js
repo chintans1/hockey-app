@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation';
 
 import GamesScreen from './screens/GamesScreen';
-import GameScreen from './screens/GameScreen';
+import SingleGameScreen from './screens/SingleGameScreen';
 import StandingsScreen from './screens/StandingsScreen';
 import configureStore from './redux/store';
 
@@ -13,7 +13,7 @@ import { styles, colors, typography } from './styles/index';
 const GamesStack = createStackNavigator(
   {
     Games: GamesScreen,
-    Game: GameScreen // TODO: SingleGameScreen?
+    Game: SingleGameScreen
   },
   {
     initialRouteName: 'Games',

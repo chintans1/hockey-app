@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { styles } from '../styles';
 
-export default class HomeScreen extends PureComponent {
+export default class SingleGameScreen extends PureComponent {
   static navigationOptions = {
-    title: 'Game Scores'
+    title: 'Team vs Team'
   };
 
   render() {
