@@ -13,7 +13,7 @@ import { styles, colors, typography } from './styles/index';
 const GamesStack = createStackNavigator(
   {
     Games: GamesScreen,
-    Game: SingleGameScreen
+    SingleGame: SingleGameScreen
   },
   {
     initialRouteName: 'Games',

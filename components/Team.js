@@ -13,6 +13,7 @@ export default class Team extends PureComponent {
     return (
       <View style={componentStyles.team}>
         <View style={componentStyles.teamLogoContainer}>
+          {/* FIXME: Look into using react-native-fast-image here */}
           <Image
             source={{ uri: logoUrl }}
             style={componentStyles.teamLogo}
