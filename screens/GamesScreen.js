@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 import GameScore from '../components/GameScore';
 
-import { getGamesForDate } from '../redux/actions/games.actions';
+import { getGamesForDate, getSingleGame } from '../redux/actions/games.actions';
 import { dateUtil } from '../utils';
 import { typography, styles } from '../styles';
 
@@ -32,18 +32,21 @@ class GamesScreen extends PureComponent {
     });
   };
 
-  onPress = () => {
-    // TODO: Need to forward props regarding the game ID
-      // so it use to fetch game details from API
-    this.props.navigation.navigate('SingleGame');
+  onPress = (game) => {
+    const { gameId, homeTeam, roadTeam } = game;
+
+    this.props.getSingleGame(gameId);
+    this.props.navigation.navigate('SingleGame', {
+      homeTeamName: homeTeam.teamName,
+      roadTeamName: roadTeam.teamName
+    });
   }
 
   // FIXME: In the future, incorporate force touch into the click
   renderEachGame = ({ item }) => (
     <TouchableOpacity
-      onPress={() => this.onPress()}
-      activeOpacity={0.7}
-    >
+      onPress={() => this.onPress(item)}
+      activeOpacity={0.7}>
       <GameScore
         homeTeam={item.homeTeam}
         roadTeam={item.roadTeam}
@@ -87,6 +90,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => (
   bindActionCreators({
     getGamesForDate,
+    getSingleGame
   }, dispatch)
 );
 

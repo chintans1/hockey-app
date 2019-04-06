@@ -1,17 +1,27 @@
 import React, { PureComponent } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
+import { connect } from 'react-redux';
+
 import { colors, styles, typography } from '../styles';
 
-export default class SingleGameScreen extends PureComponent {
-  static navigationOptions = {
-    title: 'Team vs Team'
+class SingleGameScreen extends PureComponent {
+  static navigationOptions = ({ navigation }) => {
+    const homeTeam = navigation.getParam('homeTeamName');
+    const roadTeam = navigation.getParam('roadTeamName');
+
+    return {
+      title: `${homeTeam} vs ${roadTeam}`
+    }
   };
 
   render() {
+    const { currentGame } = this.props;
+
     return (
-      <View style={componentStyles.container}>
-        <Text style={componentStyles.text}>Game Screen</Text>
-      </View>
+      <SafeAreaView style={componentStyles.container}>
+        <Text style={componentStyles.text}>{currentGame.homeTeam} vs {currentGame.roadTeam}</Text>
+      </SafeAreaView>
     );
   }
 }
@@ -28,4 +38,14 @@ const componentStyles = StyleSheet.create({
     fontSize: 36,
     ...typography.boldCenterTextStyle
   }
-})
+});
+
+const mapStateToProps = (state) => {
+  const { currentGame } = state.gamesReducer;
+
+  return {
+    currentGame
+  }
+};
+
+export default connect(mapStateToProps)(SingleGameScreen);
