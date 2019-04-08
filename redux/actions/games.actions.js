@@ -28,13 +28,12 @@ const getSingleGame = (gameId) => {
     })
 
     try {
-      // FIXME: Get information from API
+      const response = await gamesService.getSingleGame(gameId);
+      const { game } = response.data;
+
       return dispatch({
         type: gamesConstants.GET_SINGLE_GAME_SUCCESS,
-        payload: { game: {
-          homeTeam: "Edmonton",
-          roadTeam: "Calgary"
-        }}
+        payload: { game }
       });
     } catch (error) {
       console.error(error); // TODO: Handle error
