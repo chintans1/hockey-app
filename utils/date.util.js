@@ -3,7 +3,10 @@
  *
  * @param {Date} date
  */
-const dateFormatter = date => date.toLocaleDateString();
+const dateFormatter = date => {
+  date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+  return date.toISOString().slice(0,10);
+}
 
 /**
  * Returns the current date in string format (YYYY-MM-DD)
