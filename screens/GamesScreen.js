@@ -51,6 +51,8 @@ class GamesScreen extends PureComponent {
         homeTeam={item.homeTeam}
         roadTeam={item.roadTeam}
         gameInformation={item.gameInformation}
+        seriesInformation={item.seriesInformation}
+        playoffGame={item.playoffGame}
       />
     </TouchableOpacity>
   );
