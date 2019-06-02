@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -8,7 +8,7 @@ import GameScore from '../components/GameScore';
 
 import { getGamesForDate, getSingleGame } from '../redux/actions/games.actions';
 import { dateUtil } from '../utils';
-import { typography, styles } from '../styles';
+import { typography, styles, colors, dimens } from '../styles';
 
 class GamesScreen extends PureComponent {
   static navigationOptions = {
@@ -57,6 +57,10 @@ class GamesScreen extends PureComponent {
     </TouchableOpacity>
   );
 
+  renderEmptyList = () => (
+    <Text style={componentStyles.emptyList}>No games today</Text>
+  )
+
   render() {
     const { games } = this.props;
 
@@ -66,11 +70,13 @@ class GamesScreen extends PureComponent {
         {/* TODO: Do not re-render the whole list when refreshed. Don't like the blank screen
                   shown during refresh */}
         <FlatList
+          contentContainerStyle={games.length === 0 && componentStyles.centerEmptyList}
           data={games}
           renderItem={this.renderEachGame}
           onRefresh={() => this.onRefresh()}
           refreshing={this.state.refreshing}
           keyExtractor={(item) => `${item.gameId}`}
+          ListEmptyComponent={this.renderEmptyList}
         />
       </SafeAreaView>
     )
@@ -78,7 +84,16 @@ class GamesScreen extends PureComponent {
 }
 
 const componentStyles = StyleSheet.create({
-  container: styles.defaultContainer
+  container: styles.defaultContainer,
+  centerEmptyList: {
+    flex: 1,
+    justifyContent: 'center'
+  },
+  emptyList: {
+    ...typography.boldCenterTextStyle,
+    color: colors.primaryTextColor,
+    fontSize: dimens.tabTextSize,
+  }
 });
 
 const mapStateToProps = (state) => {
