@@ -2,9 +2,10 @@
 ###### NOTE: Work in progress
 Using React Native to develop a cross platform mobile application for showing NHL game scores and statistics. This requires the Hockey API that I have developed [here](https://github.com/chintans1/hockey-app-api).
 
+<p float="center">
 <img src="https://user-images.githubusercontent.com/6274806/58765445-2d3f4380-8541-11e9-8cf8-01f970bfd272.png" width="49%">
 <img src="https://user-images.githubusercontent.com/6274806/58765586-1fe78080-8564-11e9-8d66-fbcf0d98be08.png" width="49%">
-
+</p>
 
 ## Local Development
 ### Requirements
